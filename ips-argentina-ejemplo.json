@@ -136,7 +136,7 @@
               {
                 "reference" : "http:\/\/hapi.fhir.org\/baseR4\/Condition\/IPS-examples-Immunization-01"
               }
-            ],
+            ]
           }
         ],
         "resourceType" : "Composition",
@@ -219,43 +219,45 @@
       }
     },
     {
-      "gender" : "male",
-      "telecom" : [
-        {
-          "system" : "phone",
-          "value" : "44318113"
-        }
-      ],
-      "birthDate" : "1912-06-14",
       "fullUrl" : "http:\/\/hapi.fhir.org\/baseR4\/Patient\/IPS-examples-Patient-01",
-      "identifier" : [
-        {
-          "system" : "urn:oid:2.16.840.1.113883.2.10.1",
-          "value" : "9000022"
-        },
-        {
-          "system" : "http:\/\/www.renaper.gob.ar\/dni",
-          "value" : "23327758"
-        }
-      ],
-      "resourceType" : "Patient",
-      "name" : [
-        {
-          "family" : "Petrossini Fernandez Perez",
-          "given" : [
-            "Alberto"
-          ],
-          "_family" : {
-            "extension" : [
-              {
-                "url" : "http:\/\/hl7.org\/fhir\/StructureDefinition\/humanname-mothers-family",
-                "valueString" : "Fernandez"
-              }
-            ]
+      "resource" : {
+        "gender" : "male",
+        "telecom" : [
+          {
+            "system" : "phone",
+            "value" : "44318113"
+          }
+        ],
+        "birthDate" : "1912-06-14",
+        "identifier" : [
+          {
+            "system" : "urn:oid:2.16.840.1.113883.2.10.1",
+            "value" : "9000022"
           },
-          "text" : "Alberto Petrossini Fernandez Perez"
-        }
-      ]
+          {
+            "system" : "http:\/\/www.renaper.gob.ar\/dni",
+            "value" : "23327758"
+          }
+        ],
+        "resourceType" : "Patient",
+        "name" : [
+          {
+            "family" : "Petrossini Fernandez Perez",
+            "given" : [
+              "Alberto"
+            ],
+            "_family" : {
+              "extension" : [
+                {
+                  "url" : "http:\/\/hl7.org\/fhir\/StructureDefinition\/humanname-mothers-family",
+                  "valueString" : "Fernandez"
+                }
+              ]
+            },
+            "text" : "Alberto Petrossini Fernandez Perez"
+          }
+        ]
+      }
     },
     {
       "fullUrl" : "http:\/\/hapi.fhir.org\/baseR4\/Practitioner\/IPS-examples-Practitioner-01",

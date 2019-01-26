@@ -1,0 +1,24 @@
+<h5 class="card-title"><i class="fas fa-{{gender}}"></i>
+    &nbsp;&nbsp;&nbsp;
+    {{each(options.name)}}
+    {{@this.family}},&nbsp;
+        {{each(options.name[@index].given)}}
+        {{@this}}
+        {{/each}}
+    {{/each}}
+</h5>
+<p class="card-text">
+    Fecha de Nacimiento: {{birthDate}}
+    <br>
+    Contacto:&nbsp;
+    {{each(options.telecom)}}
+    <i class="fas fa-{{@this.system}}"></i>&nbsp;{{@this.value}}
+    {{/each}}
+    <br>
+    Identificadores:<br>
+    <span class="small">
+        {{each(options.identifier)}}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{@this.system}}:&nbsp;{{@this.value}}<br>
+        {{/each}}
+    </span>
+</p>

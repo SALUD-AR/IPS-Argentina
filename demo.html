@@ -1,53 +1,166 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/squirrelly@latest/dist/squirrelly.min.js"></script>
+    <style>
+        .output {
+            display: none;
+        }
+
+        .card {
+            margin-bottom: 15px;
+        }
+
+        .icon-action {
+            margin-top: 5px;
+            float: right;
+            font-size: 80%;
+        }
+
+        .list-group-item .title {
+            margin-top: 5px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+    </style>
+
     <title>Resumen Electrónico de Historia Clínica</title>
-  </head>
-  <body>
-  	<script type="text/javascript">
-		$(document).ready(function(){
-	    $("#submit").click(function(){
-	      console.log("The button was clicked.");
-	      //console.log($('#ipsInput').val());
-		  try {
-		    var ips = JSON.parse($('#ipsInput').val());
-		    console.log(ips.resourceType);
-		  } catch(e) {
-		    alert(e); // error in the above string (in this case, yes)!
-		  }
-		 });
-		});
-	</script>
-     <h1>Resumen Electrónico de Historia Clínica</h1>
-	  <div class="container" style="margin:15px;">
-	    <div class="row">
-		  <form>
-		    <div class="form-group">
-			  <label for="ipsInput">IPS Ejemplo</label>
-			  <br>
-			  <textarea id="ipsInput" rows="10" cols="40"></textarea>
-			</div>
-			<button type="button" id="submit" class="btn btn-primary">Submit</button>
-	      </form>
-		</div>
-	  </div>
-		<div class="card">
-		  <h5 class="card-header">Datos del paciente</h5>
-		  <div class="card-body">
-		    <h5 class="card-title">Special title treatment</h5>
-		    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-		    <a href="#" class="btn btn-primary">Go somewhere</a>
-		  </div>
-		</div>
-  </body>
+</head>
+<body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#submit").click(function () {
+            updateFromText();
+        });
+        loadEjemploAr = function() {
+            loadEjemplo("ips-argentina-ejemplo.json");
+        };
+        loadEjemploInt = function() {
+            loadEjemplo("ips-example-bundle.json");
+        };
+        var loadEjemplo = function(file) {
+            var jqxhr = $.getJSON(file, function() {
+                //console.log( "success" );
+            })
+                .done(function(data) {
+                    $('#ipsInput').val(JSON.stringify(data));
+                    update(data);
+                })
+                .fail(function(e) {
+                    console.log( "error",e );
+                });
+        };
+
+    });
+
+    mode = "Entries";
+
+    var render = function(templateName, data, targetLocation) {
+        if (mode == "Entries") {
+            var jqxhr = $.get("templates/" + templateName + ".html", function() {})
+                .done(function(template) {
+                    var templateResult = Sqrl.Render(template, data);
+                    $("#" + targetLocation).html(templateResult);
+                }).fail(function(e) {
+                    console.log( "error",e );
+                });
+        } else {
+            if (data.text) {
+                $("#" + targetLocation).html(data.text.div);
+            } else {
+                $("#" + targetLocation).html("No hay texto.");
+            }
+
+        }
+    };
+
+    var updateFromText = function() {
+        var ipsTxt = $('#ipsInput').val();
+        if (ipsTxt) {
+            try {
+                var ips = JSON.parse(ipsTxt);
+                update(ips);
+            } catch (e) {
+                alert("IPS Inválido - " + e);
+            }
+        }
+    };
+
+    var update = function(ips) {
+        $(".output").show();
+        ips.entry.forEach(function(entry) {
+            if (entry.resource.resourceType == "Patient") {
+                updatePatient(entry.resource);
+            }
+        });
+    };
+
+    var updatePatient = function(patient) {
+        render("patient", patient, "patient-body");
+    };
+
+
+</script>
+<h1>Resumen Electrónico de Historia Clínica</h1>
+<div class="container" style="margin:15px;">
+    <div class="row">
+        <form>
+            <div class="form-group">
+                <label for="ipsInput">IPS Ejemplo:</label>
+                <br>
+                <textarea id="ipsInput" rows="5" cols="80"></textarea>
+            </div>
+            <button type="button" id="submit" class="btn btn-primary">Procesar JSON</button>
+
+            <span class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" id="mode" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Viendo Entries
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="javascript:mode='Entries'; $('#mode').html('Viendo Entries'); updateFromText();">
+                        Ver Entries
+                    </a>
+                    <a class="dropdown-item" href="javascript:mode='Texto'; $('#mode').html('Viendo Texto'); updateFromText();">
+                        Ver Texto
+                    </a>
+                </div>
+            </span>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button" class="btn btn-success" onClick="loadEjemploAr();">Ejemplo AR</button>
+            <button type="button" class="btn btn-success" onClick="loadEjemploInt();">Ejemplo Int</button>
+        </form>
+    </div>
+    <div class="row output">
+        <div class="card" style="margin: 15px; width: 80%;">
+            <header class="card-header">
+                <a href="#" data-toggle="collapse" data-target="#patient-body" aria-expanded="true" class="">
+                    <i class="icon-action fa fa-chevron-down"></i>
+                </a>
+                <span class="title">Datos del Paciente </span>
+            </header>
+            <div class="card-body collapse show" id="patient-body">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 </html>

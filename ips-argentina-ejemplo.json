@@ -29,7 +29,7 @@
                 "reference" : "http:\/\/hapi.fhir.org\/baseR4\/Condition\/IPS-examples-Condition-01"
               }
             ],
-            "title" : "Problemnas activos",
+            "title" : "Problemas activos",
             "text" : {
               "status" : "generated",
               "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">Asma<\/div>"
@@ -48,9 +48,6 @@
             "entry" : [
               {
                 "reference" : "http:\/\/hapi.fhir.org\/baseR4\/MedicationStatement\/IPS-examples-MedicationStatement-01"
-              },
-              {
-                "reference" : "http:\/\/hapi.fhir.org\/baseR4\/MedicationStatement\/IPS-examples-MedicationStatement-02"
               }
             ],
             "title" : "Medicamentos",
@@ -102,22 +99,6 @@
             }
           },
           {
-            "title" : "Plan de tratamiento",
-            "text" : {
-              "status" : "generated",
-              "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">Continue hormone medication with Anastrozole for total of 5 years and monitor for potential breast cancer recurrence<\/div>"
-            },
-            "code" : {
-              "coding" : [
-                {
-                  "system" : "http:\/\/loinc.org",
-                  "display" : "Plan of care note",
-                  "code" : "18776-5"
-                }
-              ]
-            }
-          },
-          {
             "title" : "Vacunas",
             "text" : {
               "status" : "generated",
@@ -128,7 +109,7 @@
                 {
                   "system" : "http:\/\/loinc.org",
                   "display" : "Immunization record",
-                  "code" : "18776-5"
+                  "code" : "60484-3"
                 }
               ]
             },
@@ -172,7 +153,7 @@
             }
           ]
         },
-        "title" : "Patient Summary as of July 20, 2017 14:30",
+        "title" : "Resumen del paciente al 26 de Enero de 2018, 14:30hs",
         "identifier" : {
           "system" : "urn:oid:2.16.724.4.8.10.200.10",
           "value" : "3f69e0a5-2177-4540-baab-7a5d0877428f"
@@ -314,24 +295,24 @@
           {
             "use" : "work",
             "line" : [
-              "Houttuinen 27"
+              "Amado Diab 270,"
             ],
-            "country" : "Netherlands",
-            "city" : "Dordrecht",
-            "postalCode" : "3311 CE"
+            "country" : "Argentina",
+            "city" : "Azul",
+            "postalCode" : "B7300"
           }
         ],
         "id" : "IPS-examples-Organization-01",
         "telecom" : [
           {
             "system" : "phone",
-            "value" : "+31-51-34343400",
+            "value" : "+54 02281 43-5200",
             "use" : "work"
           }
         ],
         "text" : {
           "status" : "generated",
-          "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\"><p><b>Generated Narrative with Details<\/b><\/p><p><b>id<\/b>: IPS-examples-Organization-01<\/p><p><b>text<\/b>: <\/p><p><b>identifier<\/b>: 564738757<\/p><p><b>active<\/b>: true<\/p><p><b>name<\/b>: Anorg Aniza Tion BV \/ The best custodian ever<\/p><p><b>telecom<\/b>: ph: +31-51-34343400(WORK)<\/p><p><b>address<\/b>: Houttuinen 27 Dordrecht 3311 CE Netherlands (WORK)<\/p><\/div>"
+          "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\"><p><b>Generated Narrative with Details<\/b><\/p><p><b>id<\/b>: IPS-examples-Organization-01<\/p><p><b>text<\/b>: <\/p><p><b>identifier<\/b>: 564738757<\/p><p><b>active<\/b>: true<\/p><p><b>name<\/b>: Hospital Municipal Hospital Doctor Ángel Pintos<\/p><p><b>telecom<\/b>: ph: +54 02281 43-5200<\/p><p><b>address<\/b>: Amado Diab 270, B7300 Azul, Buenos Aires, Argentina<\/p><\/div>"
         },
         "identifier" : [
           {
@@ -340,7 +321,7 @@
           }
         ],
         "resourceType" : "Organization",
-        "name" : "Anorg Aniza Tion BV \/ The best custodian ever"
+        "name" : "Hospital Municipal Hospital Doctor Ángel Pintos"
       }
     },
     {
@@ -361,7 +342,7 @@
         "subject" : {
           "reference" : "http:\/\/hapi.fhir.org\/baseR4\/Patient\/IPS-examples-Patient-01"
         },
-        "onsetDateTime" : "2015",
+        "onsetDateTime" : "2016",
         "resourceType" : "Condition",
         "verificationStatus" : {
           "coding" : [
@@ -442,9 +423,9 @@
             "route" : {
               "coding" : [
                 {
-                  "system" : "urn:oid:0.4.0.127.0.16.1.1.2.1",
-                  "display" : "Oral use",
-                  "code" : "20053000"
+                  "system" : "http://snomed.info/sct",
+                  "display" : "vía de administración en el tracto respiratorio (calificador)",
+                  "code" : "447694001"
                 }
               ]
             },
@@ -466,10 +447,10 @@
                   ]
                 },
                 "doseQuantity" : {
-                  "code" : "1",
+                  "code" : "732981002",
                   "value" : 1,
-                  "system" : "http:\/\/unitsofmeasure.org",
-                  "unit" : "tablet"
+                  "system" : "http://snomed.info/sct",
+                  "unit" : "disparo (unidad de presentación)"
                 }
               }
             ]
@@ -501,72 +482,44 @@
       }
     },
     {
-      "fullUrl" : "http:\/\/hapi.fhir.org\/baseR4\/MedicationStatement\/IPS-examples-MedicationStatement-02",
-      "resource" : {
-        "status" : "active",
-        "medicationReference" : {
-          "reference" : "http:\/\/hapi.fhir.org\/baseR4\/Medication\/IPS-examples-Medication-02"
-        },
-        "dosage" : [
-          {
-            "route" : {
-              "coding" : [
-                {
-                  "system" : "urn:oid:0.4.0.127.0.16.1.1.2.1",
-                  "display" : "Oral use",
-                  "code" : "20053000"
-                }
-              ]
-            }
-          }
-        ],
-        "id" : "IPS-examples-MedicationStatement-02",
-        "effectivePeriod" : {
-          "start" : "2016-01"
-        },
-        "subject" : {
-          "reference" : "http:\/\/hapi.fhir.org\/baseR4\/Patient\/IPS-examples-Patient-01"
-        },
-        "meta" : {
-          "profile" : [
-            "http:\/\/hl7.org\/fhir\/uv\/ips\/StructureDefinition\/medicationstatement-uv-ips"
-          ]
-        },
-        "text" : {
-          "status" : "generated",
-          "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\"><p><b>Generated Narrative with Details<\/b><\/p><p><b>id<\/b>: IPS-examples-MedicationStatement-02<\/p><p><b>meta<\/b>: <\/p><p><b>text<\/b>: <\/p><p><b>identifier<\/b>: 9e312d6b-c6b6-439a-a730-6efaa5dcf8bc<\/p><p><b>status<\/b>: ACTIVE<\/p><p><b>medication<\/b>: <a href=\"#medication_IPS-examples-Medication-02\">Generated Summary: id: IPS-examples-Medication-02; <span title=\"Codes: {http:\/\/snomed.info\/sct 412588001}\">Black Cohosh Extract herbal supplement<\/span><\/a><\/p><p><b>subject<\/b>: <a href=\"#patient_IPS-examples-Patient-01\">Generated Summary: id: IPS-examples-Patient-01; 574687583; active; Martha DeLarosa ; ph: +31788700800(HOME); FEMALE; birthDate: 01\/05\/1972<\/a><\/p><p><b>effective<\/b>: 01\/01\/2016 --&gt; (ongoing)<\/p><p><b>dosage<\/b>: <\/p><\/div>"
-        },
-        "identifier" : [
-          {
-            "system" : "urn:oid:1.2.3.999",
-            "value" : "9e312d6b-c6b6-439a-a730-6efaa5dcf8bc"
-          }
-        ],
-        "resourceType" : "MedicationStatement"
-      }
-    },
-    {
       "fullUrl" : "http:\/\/hapi.fhir.org\/baseR4\/Medication\/IPS-examples-Medication-01",
       "resource" : {
         "code" : {
           "coding" : [
             {
               "system" : "http:\/\/snomed.info\/sct",
-              "display" : "Anastrozole (product)",
-              "code" : "108774000"
-            },
-            {
-              "system" : "urn:oid:2.16.840.1.113883.2.4.4.1",
-              "display" : "ANASTROZOL 1MG TABLET",
-              "code" : "99872"
-            },
-            {
-              "system" : "urn:oid:2.16.840.1.113883.2.4.4.7",
-              "display" : "ANASTROZOL CF TABLET FILMOMHULD 1MG",
-              "code" : "2076667"
+              "display" : "producto que contiene exactamente salbutamol 200 microgramos/disparo en polvo de liberación convencional para administración por inhalación (fármaco de uso clínico)",
+              "code" : "770301006"
             }
           ]
         },
+        "form": {
+          "coding" : [
+            {
+              "system" : "http:\/\/snomed.info\/sct",
+              "display" : "disparo (unidad de presentación)",
+              "code" : "732981002"
+            }
+          ]
+        },
+        "ingredient" : [
+          {
+            "code": {
+              "coding" : [
+                {
+                  "system" : "http:\/\/snomed.info\/sct",
+                  "display" : "salbutamol (sustancia)",
+                  "code" : "372897005"
+                }
+              ]
+            },
+            "isActive" : true,
+            "strength" : {
+              "numerator" : { "value": 200, "unit" : "mcg" },
+              "denominator" : { "value": 1, "unit": "disparo" }
+            }
+          }
+        ],
         "id" : "IPS-examples-Medication-01",
         "resourceType" : "Medication",
         "meta" : {
@@ -576,48 +529,7 @@
         },
         "text" : {
           "status" : "generated",
-          "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\"><p><b>Generated Narrative with Details<\/b><\/p><p><b>id<\/b>: IPS-examples-Medication-01<\/p><p><b>meta<\/b>: <\/p><p><b>text<\/b>: <\/p><p><b>code<\/b>: Anastrozole (product) <span style=\"background: LightGoldenRodYellow\">(Details : {SNOMED CT code '108774000' = 'Anastrozole (product)', given as 'Anastrozole (product)'}; {urn:oid:2.16.840.1.113883.2.4.4.1 code '99872' = '99872', given as 'ANASTROZOL 1MG TABLET'}; {urn:oid:2.16.840.1.113883.2.4.4.7 code '2076667' = '2076667', given as 'ANASTROZOL CF TABLET FILMOMHULD 1MG'})<\/span><\/p><\/div>"
-        }
-      }
-    },
-    {
-      "fullUrl" : "http:\/\/hapi.fhir.org\/baseR4\/Medication\/IPS-examples-Medication-02",
-      "resource" : {
-        "code" : {
-          "text" : "Black Cohosh Extract herbal supplement",
-          "coding" : [
-            {
-              "code" : "412588001",
-              "system" : "http:\/\/snomed.info\/sct",
-              "display" : "Cimicifuga racemosa extract (substance)",
-              "extension" : [
-                {
-                  "url" : "http:\/\/hl7.org\/fhir\/StructureDefinition\/translation",
-                  "extension" : [
-                    {
-                      "url" : "lang",
-                      "valueCode" : "nl-NL"
-                    },
-                    {
-                      "url" : "content",
-                      "valueString" : "Zwarte Cohosh Extract"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        "id" : "IPS-examples-Medication-02",
-        "resourceType" : "Medication",
-        "meta" : {
-          "profile" : [
-            "http:\/\/hl7.org\/fhir\/uv\/ips\/StructureDefinition\/medication-uv-ips"
-          ]
-        },
-        "text" : {
-          "status" : "generated",
-          "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\"><p><b>Generated Narrative with Details<\/b><\/p><p><b>id<\/b>: IPS-examples-Medication-02<\/p><p><b>meta<\/b>: <\/p><p><b>text<\/b>: <\/p><p><b>code<\/b>: Black Cohosh Extract herbal supplement <span style=\"background: LightGoldenRodYellow\">(Details : {SNOMED CT code '412588001' = 'Cimicifuga racemosa extract (substance)', given as 'Cimicifuga racemosa extract (substance)'})<\/span><\/p><\/div>"
+          "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\"><p><b>Generated Narrative with Details<\/b><\/p><p><b>id<\/b>: IPS-examples-Medication-01<\/p><p><b>meta<\/b>: <\/p><p><b>text<\/b>: <\/p><p><b>code<\/b>: producto que contiene exactamente salbutamol 200 microgramos/disparo en polvo de liberación convencional para administración por inhalación (fármaco de uso clínico) <span style=\"background: LightGoldenRodYellow\">(Details : {SNOMED CT code '770301006' = 'producto que contiene exactamente salbutamol 200 microgramos/disparo en polvo de liberación convencional para administración por inhalación (fármaco de uso clínico)', given as 'Anastrozole (product)'};<\/span><\/p><\/div>"
         }
       }
     },
@@ -775,7 +687,8 @@
           "coding": [
             {
               "system": "http://sisa/fhir/vacuna",
-              "code": "143"
+              "code": "2221000221107",
+              "display": "producto que contiene solamente antígeno de virus varicela-zóster vivo atenuado (producto medicinal)"
             }
           ]
         },
@@ -796,7 +709,8 @@
                 "coding": [
                   {
                     "system": "http://snomed.info/sct",
-                    "code": "40733004"
+                    "code": "38907003",
+                    "display": "varicela (trastorno)"
                   }
                 ]
               }

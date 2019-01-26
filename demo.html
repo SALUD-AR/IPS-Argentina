@@ -20,10 +20,6 @@
             crossorigin="anonymous"></script>
     <script src="https://unpkg.com/squirrelly@latest/dist/squirrelly.min.js"></script>
     <style>
-        .output {
-            display: none;
-        }
-
         .card {
             margin-bottom: 15px;
         }
@@ -72,6 +68,7 @@
     });
 
     mode = "Entries";
+    Sqrl.autoEscaping(false);
 
     var render = function(templateName, data, targetLocation) {
         if (mode == "Entries") {
@@ -83,12 +80,16 @@
                     console.log( "error",e );
                 });
         } else {
-            if (data.text) {
-                $("#" + targetLocation).html(data.text.div);
-            } else {
-                $("#" + targetLocation).html("No hay texto.");
-            }
-
+            var content = { titulo: data.title, div: "No hay texto." };
+            if (!content.titulo) content.titulo = data.resourceType;
+            if (data.text) content.div = data.text.div;
+            var jqxhr = $.get("templates/Text.html", function() {})
+                .done(function(template) {
+                    var templateResult = Sqrl.Render(template, content);
+                    $("#" + targetLocation).html(templateResult);
+                }).fail(function(e) {
+                    console.log( "error",e );
+                });
         }
     };
 
@@ -104,20 +105,67 @@
         }
     };
 
-    var update = function(ips) {
-        $(".output").show();
+    var getEntry = function(ips, fullUrl) {
+        var result = {};
         ips.entry.forEach(function(entry) {
-            if (entry.resource.resourceType == "Patient") {
-                updatePatient(entry.resource);
+            if (entry.fullUrl == fullUrl) {
+                result = entry.resource;
+            }
+        });
+        return result;
+    };
+
+    var update = function(ips) {
+        $(".output").html("");
+        ips.entry.forEach(function(entry) {
+            if (entry.resource.resourceType == "Composition") {
+                var composition = entry.resource;
+                composition.custodian = getEntry(ips, composition.custodian.reference)
+                render("Composition", entry.resource, "Composition");
+                var patient = getEntry(ips, composition.subject.reference);
+                if (patient) {
+                    render("Patient", patient, "Patient");
+                }
+                composition.section.forEach(function(section) {
+                    if (section.code.coding[0].code == "11450-4") {
+                        section.problems = [];
+                        section.entry.forEach(function(problem) {
+                            section.problems.push(getEntry(ips, problem.reference));
+                        });
+                        render("Problems", section, "Problems");
+                    }
+
+                    if (section.code.coding[0].code == "48765-2") {
+                        section.allergies = [];
+                        section.entry.forEach(function(allergy) {
+                            section.allergies.push(getEntry(ips, allergy.reference));
+                        });
+                        render("Allergies", section, "Allergies");
+                    }
+
+                    if (section.code.coding[0].code == "10160-0") {
+                        section.medications = [];
+                        section.entry.forEach(function(medication) {
+                            var statement = getEntry(ips, medication.reference);
+                            var medicationReference = getEntry(ips, statement.medicationReference.reference);
+                            section.medications.push({
+                                statement: statement,
+                                medication: medicationReference
+                            });
+                        });
+                        render("Medications", section, "Medications");
+                    }
+                    if (section.code.coding[0].code == "60484-3") {
+                        section.immunizations = [];
+                        section.entry.forEach(function(immunization) {
+                            section.immunizations.push(getEntry(ips, immunization.reference));
+                        });
+                        render("Immunizations", section, "Immunizations");
+                    }
+                });
             }
         });
     };
-
-    var updatePatient = function(patient) {
-        render("patient", patient, "patient-body");
-    };
-
-
 </script>
 <h1>Resumen Electrónico de Historia Clínica</h1>
 <div class="container" style="margin:15px;">
@@ -149,15 +197,25 @@
             <button type="button" class="btn btn-success" onClick="loadEjemploInt();">Ejemplo Int</button>
         </form>
     </div>
-    <div class="row output">
-        <div class="card" style="margin: 15px; width: 80%;">
-            <header class="card-header">
-                <a href="#" data-toggle="collapse" data-target="#patient-body" aria-expanded="true" class="">
-                    <i class="icon-action fa fa-chevron-down"></i>
-                </a>
-                <span class="title">Datos del Paciente </span>
-            </header>
-            <div class="card-body collapse show" id="patient-body">
+    <div class="row">
+        <div class="row col-md-12" style="margin: 15px;">
+            <div class="col-md-6 output" id="Composition">
+            </div>
+            <div class="col-md-6 output" id="Patient">
+            </div>
+        </div>
+        <div class="row col-md-12" style="margin: 15px;">
+            <div class="col-md-6 output" id="Allergies">
+            </div>
+            <div class="col-md-6 output" id="Problems">
+            </div>
+        </div>
+        <div class="row col-md-12" style="margin: 15px;">
+            <div class="col-md-12 output" id="Medications">
+            </div>
+        </div>
+        <div class="row col-md-12" style="margin: 15px;">
+            <div class="col-md-12 output" id="Immunizations">
             </div>
         </div>
     </div>

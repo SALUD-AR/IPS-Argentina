@@ -1,0 +1,68 @@
+<div class="card">
+    <header class="card-header">
+        <a href="#" data-toggle="collapse" data-target="#medications-body" aria-expanded="true" class="">
+            <i class="icon-action fa fa-chevron-down"></i>
+        </a>
+        <span class="title">Medicamentos activos</span>
+    </header>
+    <div class="card-body collapse show" id="medications-body">
+        <ul class="list-group">
+        {{each(options.medications)}}
+            <li class="list-group-item">
+        {{if(options.medications[@index].medication.code.coding)}}
+
+        {{each(options.medications[@index].medication.code.coding)}}
+                <span class="badge badge-primary">{{@this.system}}</span> {{@this.display}} ({{@this.code}})<br>
+        {{/each}}
+
+        {{/if}}
+        <br>
+            {{if(options.medications[@index].medication.ingredient)}}
+            {{each(options.medications[@index].medication.ingredient)}}
+                    <table class="table table-bordered table-sm">
+                        <thead>
+                        <tr><th colspan="5">Composición</th></tr>
+                        <tr>
+                            <th scope="col">Ingrediente</th>
+                            <th scope="col">Numerador Cantidad</th>
+                            <th scope="col">Numerador Unidad</th>
+                            <th scope="col">Denominador Cantidad</th>
+                            <th scope="col">Denominador Unidad</th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td>{{@this.code.coding[0].display}}</td>
+                            <td>{{@this.strength.numerator.value}}</td>
+                            <td>{{@this.strength.numerator.unit}}</td>
+                            <td>{{@this.strength.denominator.value}}</td>
+                            <td>{{@this.strength.denominator.unit}}</td>
+                        </tr>
+                    </table>
+            {{/each}}
+            {{/if}}
+            {{if(options.medications[@index].statement.dosage && options.medications[@index].statement.route && options.medications[@index].statement.doseAndRate[0].doseQuantity && options.medications[@index].statement.doseAndRate[0].timing)}}
+                <table class="table table-bordered table-sm">
+                    <thead>
+                    <tr><th colspan="5">Posología</th></tr>
+                    <tr>
+                        <th scope="col">Via de administración</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Unidad</th>
+                        <th scope="col">Frecuencia cantidad</th>
+                        <th scope="col">Frecuencia período</th>
+                    </tr>
+                    </thead>
+                    <tr>
+                        <td>{{@this.statement.dosage[0].route.coding[0].display}}</td>
+                        <td>{{@this.statement.dosage[0].doseAndRate[0].doseQuantity.value}}</td>
+                        <td>{{@this.statement.dosage[0].doseAndRate[0].doseQuantity.unit}}</td>
+                        <td>{{@this.statement.dosage[0].timing.repeat.count}}</td>
+                        <td>{{@this.statement.dosage[0].timing.repeat.periodUnit}}</td>
+                    </tr>
+                </table>
+            </li>
+            {{/if}}
+        {{/each}}
+        </ul>
+    </div>
+</div>

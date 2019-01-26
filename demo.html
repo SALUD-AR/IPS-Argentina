@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <title>Resumen Electrónico de Historia Clínica</title>
+  </head>
+  <body>
+  	<script type="text/javascript">
+		$(document).ready(function(){
+	    $("#submit").click(function(){
+	      console.log("The button was clicked.");
+	      //console.log($('#ipsInput').val());
+		  try {
+		    var ips = JSON.parse($('#ipsInput').val());
+		    console.log(ips.resourceType);
+		  } catch(e) {
+		    alert(e); // error in the above string (in this case, yes)!
+		  }
+		 });
+		});
+	</script>
+     <h1>Resumen Electrónico de Historia Clínica</h1>
+	  <div class="container" style="margin:15px;">
+	    <div class="row">
+		  <form>
+		    <div class="form-group">
+			  <label for="ipsInput">IPS Ejemplo</label>
+			  <br>
+			  <textarea id="ipsInput" rows="10" cols="40"></textarea>
+			</div>
+			<button type="button" id="submit" class="btn btn-primary">Submit</button>
+	      </form>
+		</div>
+	  </div>
+  </body>
+</html>

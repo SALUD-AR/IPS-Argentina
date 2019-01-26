@@ -40,7 +40,7 @@
                     </table>
             {{/each}}
             {{/if}}
-            {{if(options.medications[@index].statement.dosage && options.medications[@index].statement.route && options.medications[@index].statement.doseAndRate[0].doseQuantity && options.medications[@index].statement.doseAndRate[0].timing)}}
+            {{if(options.medications[@index].statement.dosage && options.medications[@index].statement.dosage[0].route  && options.medications[@index].statement.dosage[0].doseAndRate)}}
                 <table class="table table-bordered table-sm">
                     <thead>
                     <tr><th colspan="5">Posología</th></tr>

@@ -218,6 +218,10 @@
           {
             "system" : "http:\/\/www.renaper.gob.ar\/dni",
             "value" : "23327758"
+          },
+          {
+            "system": "https://www.saluddigital.ar/organizaciones/282818181/Patient",
+           "value": "01"
           }
         ],
         "resourceType" : "Patient",
@@ -256,6 +260,10 @@
             "assigner" : {
               "display" : "CIBG"
             }
+          },
+          {
+            "system" : "https://www.saluddigital.ar/profesionales",
+            "value" : "01"
           }
         ],
         "resourceType" : "Practitioner",
@@ -318,6 +326,10 @@
           {
             "system" : "urn:oid:2.16.528.1.1007.3.3",
             "value" : "564738757"
+          },
+          {
+            "system" : "https://www.saluddigital.ar/organizaciones",
+            "value" : "282818181"
           }
         ],
         "resourceType" : "Organization",
@@ -669,15 +681,17 @@
           {
             "url": "http://sisa/fhir/esquema",
             "valueCoding": {
-              "system": "http:/sisa/fhir/esquemas",
-              "code": "81"
+              "system": "https://saluddigital.ar/valueSet/NOMIVAC-esquema-code",
+              "code": "81",
+              "display":"Antigripal Esquema Personal de Salud"
             }
           },
           {
             "url": "http://sisa/fhir/condicionAplicacion",
             "valueCoding": {
-              "system": "http://www.snomed.org/",
-              "code": "81312321323"
+              "system": "https://saluddigital.ar/valueSet/NOMIVAC-condicion-code",
+              "code": "17",
+              "display": "Personal de Salud"
             }
           }
         ],
@@ -686,9 +700,9 @@
         "vaccineCode": {
           "coding": [
             {
-              "system": "http://sisa/fhir/vacuna",
-              "code": "2221000221107",
-              "display": "producto que contiene solamente antígeno de virus varicela-zóster vivo atenuado (producto medicinal)"
+              "system": "https://snomed.info/sct/11000221109/id/228100022110",
+              "code": "1181000221105",
+              "display": "producto que contiene solamente antígeno de virus de la influenza (producto medicinal)"
             }
           ]
         },
@@ -698,7 +712,7 @@
         "date": "2018-05-22",
         "primarySource": true,
         "location": {
-          "reference": "https://bus-dev.msal.gov.ar/fhir/Location/282818181"
+          "reference": "https://www.saluddigital.ar/organizaciones/282818181"
         },
         "lotNumber": "649718",
         "vaccinationProtocol": [
@@ -709,8 +723,8 @@
                 "coding": [
                   {
                     "system": "http://snomed.info/sct",
-                    "code": "38907003",
-                    "display": "varicela (trastorno)"
+                    "code": "6142004",
+                    "display": "gripe (trastorno)"
                   }
                 ]
               }

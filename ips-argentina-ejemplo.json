@@ -32,7 +32,7 @@
             "title" : "Problemas activos",
             "text" : {
               "status" : "generated",
-              "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">Asma<\/div>"
+              "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">asma (trastorno)<\/div>"
             }
           },
           {
@@ -52,8 +52,8 @@
             ],
             "title" : "Medicamentos",
             "text" : {
-              "status" : "generated",
-              "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">\n    <table>\n                                <thead>\n                                    <tr>\n                                        <th>Medicamento<\/th>\n                                        <th>Strength<\/th>\n                                        <th>Forma<\/th>\n                                        <th>Dosis<\/th>\n                                        <th>Comentario<\/th>\n                                    <\/tr>\n                                <\/thead>\n                                <tbody>\n                                    <tr>\n                                        <td>Anastrozol<\/td>\n                                        <td>1 mg<\/td>\n                                        <td>comprimido<\/td>\n                                        <td>uno por día<\/td>\n                                        <td>tratamiento de cancer de mama<\/td>\n                                    <\/tr>\n                                    <tr>\n                                        <td>extracto de Cimicifuga racemosa<\/td>\n                                        <td> <\/td>\n                                        <td>píldora<\/td>\n                                        <td> <\/td>\n                                        <td>suplemento herbal<\/td>\n                                    <\/tr>\n                                <\/tbody>\n                            <\/table>\n                        <\/div>"
+              "status" : "additional",
+              "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">\n    <table>\n                                <thead>\n                                    <tr>\n                                        <th>Medicamento<\/th>\n                                        <th>Strength<\/th>\n                                        <th>Forma<\/th>\n                                        <th>Dosis<\/th>\n                                        <th>Comentario<\/th>\n                                    <\/tr>\n                                <\/thead>\n                                <tbody>\n                                    <tr>\n                                        <td>salbutamol (sustancia)<\/td>\n                                        <td>200 mcg<\/td>\n                                        <td>disparo<\/td>\n                                        <td>uno por día<\/td>\n                                        <td>tratamiento de asma<\/td>\n                                    <\/tr>\n                                                          <\/tbody>\n                            <\/table>\n                        <\/div>"
             }
           },
           {
@@ -74,14 +74,14 @@
             "title" : "Alergias",
             "text" : {
               "status" : "generated",
-              "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">Allergy to penicillin, high criticality, active<\/div>"
+              "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">Alergia a penicilina (trastorno), criticidad alta, activo<\/div>"
             }
           },
           {
             "title" : "Vacunas",
             "text" : {
               "status" : "generated",
-              "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">Lista de las vacunas recibidas<\/div>"
+              "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">producto que contiene solamente antígeno de virus de la influenza (producto medicinal)<\/div>"
             },
             "code" : {
               "coding" : [
@@ -117,8 +117,8 @@
         },
         "title" : "Resumen del paciente al 26 de Enero de 2018, 14:30hs",
         "identifier" : {
-          "system" : "urn:oid:2.16.724.4.8.10.200.10",
-          "value" : "3f69e0a5-2177-4540-baab-7a5d0877428f"
+          "system" : "http://hospitalPintos.org.ar/Composition",
+          "value" : "10501"
         },
         "date" : "2018-01-26T14:30:00-03:00",
         "meta" : {
@@ -128,7 +128,7 @@
         },
         "text" : {
           "status" : "generated",
-          "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\"><p><b>Generated Narrative with Details<\/b><\/p><p><b>id<\/b>: IPS-examples-Composition-01<\/p><p><b>meta<\/b>: <\/p><p><b>text<\/b>: <\/p><p><b>identifier<\/b>: 3f69e0a5-2177-4540-baab-7a5d0877428f<\/p><p><b>status<\/b>: FINAL<\/p><p><b>type<\/b>: Patient Summary <span style=\"background: LightGoldenRodYellow\">(Details : {LOINC code '60591-5' = 'Patient summary Document', given as 'Patient Summary'})<\/span><\/p><p><b>date<\/b>: 20\/07\/2017 2:30:00 PM<\/p><p><b>author<\/b>: <a href=\"#practitioner_IPS-examples-Practitioner-01\">Generated Summary: id: IPS-examples-Practitioner-01; 129854633; active; Beetje van Hulp <\/a><\/p><p><b>title<\/b>: Patient Summary as of July 20, 2017 14:30<\/p><p><b>confidentiality<\/b>: N<\/p><blockquote><p><b>attester<\/b><\/p><p><b>mode<\/b>: LEGAL<\/p><p><b>time<\/b>: 20\/07\/2017 2:30:00 PM<\/p><p><b>party<\/b>: <a href=\"#practitioner_IPS-examples-Practitioner-01\">Generated Summary: id: IPS-examples-Practitioner-01; 129854633; active; Beetje van Hulp <\/a><\/p><\/blockquote><blockquote><p><b>attester<\/b><\/p><p><b>mode<\/b>: LEGAL<\/p><p><b>time<\/b>: 20\/07\/2017 2:30:00 PM<\/p><p><b>party<\/b>: <a href=\"#organization_IPS-examples-Organization-01\">Generated Summary: id: IPS-examples-Organization-01; 564738757; active; name: Anorg Aniza Tion BV \/ The best custodian ever; ph: +31-51-34343400(WORK)<\/a><\/p><\/blockquote><p><b>custodian<\/b>: <a href=\"#organization_IPS-examples-Organization-01\">Generated Summary: id: IPS-examples-Organization-01; 564738757; active; name: Anorg Aniza Tion BV \/ The best custodian ever; ph: +31-51-34343400(WORK)<\/a><\/p><h3>RelatesTos<\/h3><table class=\"grid\"><tr><td>-<\/td><td><b>Code<\/b><\/td><td><b>Target[x]<\/b><\/td><\/tr><tr><td>*<\/td><td>APPENDS<\/td><td>c2277753-9f90-4a95-8ddb-a0b3f6e7d292<\/td><\/tr><\/table><h3>Events<\/h3><table class=\"grid\"><tr><td>-<\/td><td><b>Code<\/b><\/td><td><b>Period<\/b><\/td><td><b>Code<\/b><\/td><td><b>Period<\/b><\/td><\/tr><tr><td>*<\/td><td>care provision <span style=\"background: LightGoldenRodYellow\">(Details : {http:\/\/terminology.hl7.org\/CodeSystem\/v3-ActClass code 'PCPR' = 'care provision)<\/span><\/td><td>?? --&gt; 20\/07\/2017 2:30:00 PM<\/td><td>care provision <span style=\"background: LightGoldenRodYellow\">(Details : {http:\/\/terminology.hl7.org\/CodeSystem\/v3-ActClass code 'PCPR' = 'care provision)<\/span><\/td><td>?? --&gt; 20\/07\/2017 2:30:00 PM<\/td><\/tr><\/table><\/div>"
+          "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\"><p><b>Generated Narrative with Details<\/b><\/p><p><b>id<\/b>: IPS-examples-Composition-01<\/p><p><b>meta<\/b>: <\/p><p><b>text<\/b>: <\/p><p><b>identifier<\/b>: 10501<\/p><p><b>status<\/b>: FINAL<\/p><p><b>type<\/b>: Patient Summary <span style=\"background: LightGoldenRodYellow\">(Details : {LOINC code '60591-5' = 'Patient summary Document', given as 'Patient Summary'})<\/span><\/p><p><b>date<\/b>: 26\/01\/2018 14:30:00 PM<\/p><p><b>author<\/b>: <a href=\"#device_IPS-examples-Device-01\">Generated Summary: id: IPS-examples-Device-01; Sistema HCE del Hospital Municipal Dr Angel Pintos <\/a><\/p><p><b>title<\/b>: Patient Summary as of January 26, 2018 14:30<\/p><p><b>confidentiality<\/b>: N<\/p><blockquote><p><b>attester<\/b><\/p><p><b>mode<\/b>: LEGAL<\/p><p><b>time<\/b>: 26\/01\/2018 2:30:00 PM<\/p><p><b>party<\/b>: <a href=\"#organization_IPS-examples-Organization-01\">Generated Summary: id: IPS-examples-Organization-01; 14999912399913; active; Hospital Municipal Hospital Doctor Ángel Pintos <\/a><\/p><\/blockquote><p><b>custodian<\/b>: <a href=\"#organization_IPS-examples-Organization-01\">Generated Summary: id: IPS-examples-Organization-01; http://hospitalPintos.org.ar; active; name: Hospital Municipal Hospital Doctor Ángel Pintos \/ Dominio; ph: +54 02281 43-5200(WORK)<\/a><\/p><\/div>"
         },
         "custodian" : {
           "reference" : "http:\/\/hapi.fhir.org\/baseR4\/Organization\/IPS-examples-Organization-01"
@@ -159,7 +159,7 @@
         "birthDate" : "1912-06-14",
         "identifier" : [
           {
-            "system" : "urn:oid:2.16.840.1.113883.2.10.1",
+            "system" : "http://hospitalPintos.org.ar/Patient",
             "value" : "9000022"
           },
           {
@@ -193,60 +193,14 @@
       }
     },
     {
-      "fullUrl" : "http:\/\/hapi.fhir.org\/baseR4\/Practitioner\/IPS-examples-Practitioner-01",
-      "resource" : {
-        "active" : true,
-        "id" : "IPS-examples-Practitioner-01",
-        "text" : {
-          "status" : "generated",
-          "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\"><p><b>Generated Narrative with Details<\/b><\/p><p><b>id<\/b>: IPS-examples-Practitioner-01<\/p><p><b>text<\/b>: <\/p><p><b>identifier<\/b>: 129854633<\/p><p><b>active<\/b>: true<\/p><p><b>name<\/b>: Beetje van Hulp <\/p><h3>Qualifications<\/h3><table class=\"grid\"><tr><td>-<\/td><td><b>Code<\/b><\/td><\/tr><tr><td>*<\/td><td>Generalist medical practitioners <span style=\"background: LightGoldenRodYellow\">(Details : {urn:oid:2.16.840.1.113883.2.9.6.2.7 code '2211' = '2211', given as 'Generalist medical practitioners'}; {urn:oid:2.16.840.1.113883.2.4.15.111 code '01.015' = '01.015', given as 'Huisarts'})<\/span><\/td><\/tr><\/table><\/div>"
-        },
-        "identifier" : [
-          {
-            "system" : "urn:oid:2.16.528.1.1007.3.1",
-            "value" : "129854633",
-            "assigner" : {
-              "display" : "CIBG"
-            }
-          },
-          {
-            "system" : "http://www.saluddigital.ar/profesionales",
-            "value" : "01"
-          }
-        ],
-        "resourceType" : "Practitioner",
-        "name" : [
-          {
-            "given" : [
-              "Beetje"
-            ],
-            "family" : "van Hulp"
-          }
-        ],
-        "qualification" : [
-          {
-            "code" : {
-              "coding" : [
-                {
-                  "system" : "http://snomed.info/sct/11000221109/id/2271000221108",
-                  "display" : "médico (ocupación)",
-                  "code" : "309343006"
-                }
-              ]
-            }
-          }
-        ]
-      }
-    },
-    {
       "fullUrl" : "http:\/\/hapi.fhir.org\/baseR4\/Device\/IPS-examples-Device-01",
       "resource" : {
         "resourceType" : "Device",
         "id" : "IPS-examples-Device-01",
         "identifier" : [
           {
-            "system" : "https://federador.msal.gob.ar/dominio",
-            "value" : "oidOtorgadoAldominio"
+            "system" : "http://hospitalPintos.org.ar/Device",
+            "value" : "HCE_HtalPintos_v1.0"
           }
          ],
         "type" : {
@@ -259,7 +213,7 @@
           ]
         },
         "owner": {
-          "reference": "http://www.saluddigital.ar/refes/282818181"
+          "reference": "http://argentina.gob.ar/salud/refes/14999912399913"
         },
         "deviceName": [
           {
@@ -294,16 +248,16 @@
         ],
         "text" : {
           "status" : "generated",
-          "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\"><p><b>Generated Narrative with Details<\/b><\/p><p><b>id<\/b>: IPS-examples-Organization-01<\/p><p><b>text<\/b>: <\/p><p><b>identifier<\/b>: 564738757<\/p><p><b>active<\/b>: true<\/p><p><b>name<\/b>: Hospital Municipal Hospital Doctor Ángel Pintos<\/p><p><b>telecom<\/b>: ph: +54 02281 43-5200<\/p><p><b>address<\/b>: Amado Diab 270, B7300 Azul, Buenos Aires, Argentina<\/p><\/div>"
+          "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\"><p><b>Generated Narrative with Details<\/b><\/p><p><b>id<\/b>: IPS-examples-Organization-01<\/p><p><b>text<\/b>: <\/p><p><b>identifier<\/b>: 14999912399913<\/p><p><b>active<\/b>: true<\/p><p><b>name<\/b>: Hospital Municipal Hospital Doctor Ángel Pintos<\/p><p><b>telecom<\/b>: ph: +54 02281 43-5200<\/p><p><b>address<\/b>: Amado Diab 270, B7300 Azul, Buenos Aires, Argentina<\/p><\/div>"
         },
         "identifier" : [
           {
-            "system" : "urn:oid:2.16.528.1.1007.3.3",
-            "value" : "564738757"
+            "system" : "http://argentina.gob.ar/salud/refes",
+            "value" : "14999912399913"
           },
           {
-            "system" : "http://www.saluddigital.ar/refes",
-            "value" : "282818181"
+            "system" : "http://argentina.gob.ar/salud/bus-interoperabilidad/dominio",
+            "value" : "http://hospitalPintos.org.ar"
           }
         ],
         "resourceType" : "Organization",
@@ -338,33 +292,12 @@
             }
           ]
         },
-        "identifier" : [
-          {
-            "system" : "urn:oid:1.2.3.999",
-            "value" : "c87bf51c-e53c-4bfe-b8b7-aa62bdd93002"
-          }
-        ],
         "code" : {
           "coding" : [
             {
               "code" : "195967001",
               "system" : "http:\/\/snomed.info\/sct",
-              "display" : "asma (trastorno)",
-              "extension" : [
-                {
-                  "url" : "http:\/\/hl7.org\/fhir\/StructureDefinition\/translation",
-                  "extension" : [
-                    {
-                      "url" : "lang",
-                      "valueCode" : "en-US"
-                    },
-                    {
-                      "url" : "content",
-                      "valueString" : "Asthma"
-                    }
-                  ]
-                }
-              ]
+              "display" : "asma (trastorno)"
             }
           ]
         },
@@ -458,12 +391,6 @@
           "status" : "generated",
           "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\"><p><b>Generated Narrative with Details<\/b><\/p><p><b>id<\/b>: IPS-examples-MedicationStatement-01<\/p><p><b>meta<\/b>: <\/p><p><b>text<\/b>: <\/p><p><b>identifier<\/b>: b75f92cb-61d4-469a-9387-df5ef70d25f0<\/p><p><b>status<\/b>: ACTIVE<\/p><p><b>medication<\/b>: <a href=\"#medication_IPS-examples-Medication-01\">Generated Summary: id: IPS-examples-Medication-01; <span title=\"Codes: {http:\/\/snomed.info\/sct 108774000}, {urn:oid:2.16.840.1.113883.2.4.4.1 99872}, {urn:oid:2.16.840.1.113883.2.4.4.7 2076667}\">Anastrozole (product)<\/span><\/a><\/p><p><b>subject<\/b>: <a href=\"#patient_IPS-examples-Patient-01\">Generated Summary: id: IPS-examples-Patient-01; 574687583; active; Martha DeLarosa ; ph: +31788700800(HOME); FEMALE; birthDate: 01\/05\/1972<\/a><\/p><p><b>effective<\/b>: 01\/03\/2015 --&gt; (ongoing)<\/p><p><b>dosage<\/b>: <\/p><\/div>"
         },
-        "identifier" : [
-          {
-            "system" : "urn:oid:1.2.3.999",
-            "value" : "b75f92cb-61d4-469a-9387-df5ef70d25f0"
-          }
-        ],
         "resourceType" : "MedicationStatement"
       }
     },
@@ -534,8 +461,8 @@
           "coding" : [
             {
               "system" : "http:\/\/snomed.info\/sct",
-              "display" : "Penicillin -class of antibiotic- (substance)",
-              "code" : "373270004"
+              "display" : "alergia a la penicilina (trastorno)",
+              "code" : "91936005"
             }
           ]
         },
@@ -548,12 +475,6 @@
           "status" : "generated",
           "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\"><p><b>Generated Narrative with Details<\/b><\/p><p><b>id<\/b>: IPS-examples-AllergyIntolerance-01<\/p><p><b>meta<\/b>: <\/p><p><b>text<\/b>: <\/p><p><b>identifier<\/b>: 3a462598-009c-484a-965c-d6b24a821424<\/p><p><b>type<\/b>: ALLERGY<\/p><p><b>category<\/b>: MEDICATION<\/p><p><b>criticality<\/b>: HIGH<\/p><p><b>code<\/b>: Penicillin -class of antibiotic- (substance) <span style=\"background: LightGoldenRodYellow\">(Details : {SNOMED CT code '373270004' = 'Penicillin -class of antibiotic- (substance)', given as 'Penicillin -class of antibiotic- (substance)'})<\/span><\/p><p><b>patient<\/b>: <a href=\"#patient_IPS-examples-Patient-01\">Generated Summary: id: IPS-examples-Patient-01; 574687583; active; Martha DeLarosa ; ph: +31788700800(HOME); FEMALE; birthDate: 01\/05\/1972<\/a><\/p><\/div>"
         },
-        "identifier" : [
-          {
-            "system" : "urn:oid:1.2.3.999",
-            "value" : "3a462598-009c-484a-965c-d6b24a821424"
-          }
-        ],
         "resourceType" : "AllergyIntolerance",
         "type" : "allergy",
         "onsetDateTime" : "2010"
@@ -568,7 +489,7 @@
           {
             "url": "http://sisa/fhir/esquema",
             "valueCoding": {
-              "system": "http://saluddigital.ar/valueSet/NOMIVAC-esquema-code",
+              "system": "http://argentina.gob.ar/salud/NOMIVAC-esquemas",
               "code": "81",
               "display":"Antigripal Esquema Personal de Salud"
             }
@@ -576,7 +497,7 @@
           {
             "url": "http://sisa/fhir/condicionAplicacion",
             "valueCoding": {
-              "system": "http://saluddigital.ar/valueSet/NOMIVAC-condicion-code",
+              "system": "http://argentina.gob.ar/salud/NOMIVAC-condicion",
               "code": "17",
               "display": "Personal de Salud"
             }
@@ -599,7 +520,7 @@
         "date": "2017-05-22",
         "primarySource": true,
         "location": {
-          "reference": "http://www.saluddigital.ar/refes/282818181"
+          "reference": "http://argentina.gob.ar/salud/refes/14999912399913"
         },
         "lotNumber": "649718",
         "vaccinationProtocol": [
@@ -631,7 +552,7 @@
   ],
   "type" : "document",
   "identifier" : {
-    "system" : "urn:oid:2.16.724.4.8.10.200.10",
-    "value" : "175bd032-8b00-4728-b2dc-748bb1501aed"
+    "system" : "http://hospitalPintos.org.ar/Bundle",
+    "value" : "12000345"
   }
 }

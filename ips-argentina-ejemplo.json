@@ -29,7 +29,7 @@
                 "reference" : "http:\/\/hapi.fhir.org\/baseR4\/Condition\/IPS-examples-Condition-01"
               }
             ],
-            "title" : "Problemas activos",
+            "title" : "Problemas",
             "text" : {
               "status" : "generated",
               "div" : "<div xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">asma (trastorno)<\/div>"
@@ -149,14 +149,14 @@
       "fullUrl" : "http:\/\/hapi.fhir.org\/baseR4\/Patient\/IPS-examples-Patient-01",
       "resource" : {
         "id" : "IPS-examples-Patient-01",
-        "gender" : "male",
+        "gender" : "female",
         "telecom" : [
           {
             "system" : "phone",
             "value" : "44318113"
           }
         ],
-        "birthDate" : "1912-06-14",
+        "birthDate" : "1969-11-01",
         "identifier" : [
           {
             "system" : "http://hospitalPintos.org.ar/Patient",
@@ -164,30 +164,26 @@
           },
           {
             "system" : "http:\/\/www.renaper.gob.ar\/dni",
-            "value" : "23327758"
+            "value" : "99999999"
           }
         ],
         "resourceType" : "Patient",
         "active" : "true",
         "name" : [
           {
-            "family" : "Petrossini Fernandez Perez",
+            "family" : "Villareal",
             "given" : [
-              "Alberto"
+              "Maria","Victoria"
             ],
             "_family" : {
               "extension" : [
                     {
                         "url":"https://federador.msal.gob.ar/primer_apellido",
-                        "valueString":"Petrossini"
-                    },
-                    {
-                        "url":"https://federador.msal.gob.ar/segundo_apellido",
-                        "valueString":"Fernandez Perez"
+                        "valueString":"Villareal"
                     }
                 ]
             },
-            "text" : "Alberto Petrossini Fernandez Perez"
+            "text" : "Villareal Maria Victoria"
           }
         ]
       }
@@ -213,7 +209,7 @@
           ]
         },
         "owner": {
-          "reference": "http://argentina.gob.ar/salud/refes/14999912399913"
+          "reference": "http://argentina.gob.ar/salud/refes/Organization/14999912399913"
         },
         "deviceName": [
           {
@@ -485,24 +481,6 @@
       "resource": {
         "resourceType": "Immunization",
         "id": "IPS-examples-Immunization-01",
-        "extension": [
-          {
-            "url": "http://sisa/fhir/esquema",
-            "valueCoding": {
-              "system": "http://argentina.gob.ar/salud/NOMIVAC-esquemas",
-              "code": "81",
-              "display":"Antigripal Esquema Personal de Salud"
-            }
-          },
-          {
-            "url": "http://sisa/fhir/condicionAplicacion",
-            "valueCoding": {
-              "system": "http://argentina.gob.ar/salud/NOMIVAC-condicion",
-              "code": "17",
-              "display": "Personal de Salud"
-            }
-          }
-        ],
         "status": "completed",
         "notGiven": false,
         "vaccineCode": {
@@ -517,15 +495,43 @@
         "patient" : {
           "reference" : "http:\/\/hapi.fhir.org\/baseR4\/Patient\/IPS-examples-Patient-01"
         },
-        "date": "2017-05-22",
+        "occurrenceDateTime": "2017-05-22",
         "primarySource": true,
         "location": {
-          "reference": "http://argentina.gob.ar/salud/refes/14999912399913"
+          "reference": "http://argentina.gob.ar/salud/refes/Location/14999912399913"
         },
         "lotNumber": "649718",
-        "vaccinationProtocol": [
+        "expirationDate": "2017-12-22",
+        "reasonCode": [
           {
-            "doseSequence": 1,
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "429060002",
+                "display": "procedimiento para cumplir con el requerimiento ocupacional (procedimiento)"
+              },
+              {
+                "system": "http://saluddigital.ar/valueSet/NOMIVAC-condicion-code",
+                "code": "17",
+                "display":"Personal de Salud"
+              }
+            ]
+          }
+        ],
+        "isSubpotent": false,
+        "protocolApplied": [
+          {
+            "series": "Antigripal Esquema Personal de Salud",
+            "extension": [
+              {
+                "url":"http://saluddigital.ar/fhir/esquema",
+                "valueCoding":{
+                  "system":"http://saluddigital.ar/valueSet/NOMIVAC-esquema-code",
+                  "code":"81",
+                  "display":"Antigripal Esquema Personal de Salud"
+                }
+              }
+            ],
             "targetDisease": [
               {
                 "coding": [
@@ -537,14 +543,7 @@
                 ]
               }
             ],
-            "doseStatus": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/vaccination-protocol-dose-status",
-                  "code": "count"
-                }
-              ]
-            }
+            "doseNumberPositiveInt": 1
           }
         ]
       }
